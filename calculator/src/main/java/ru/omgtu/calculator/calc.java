@@ -39,6 +39,7 @@ public class calc extends AppCompatActivity {
         buttonEight = (Button) findViewById(R.id.Eight);
         buttonNine = (Button) findViewById(R.id.Nine);
         tvResult = (EditText) findViewById(R.id.Result);
+        setComponentListeners();
     }
 
     void setComponentListeners() {
