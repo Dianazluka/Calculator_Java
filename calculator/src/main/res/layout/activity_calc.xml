@@ -15,6 +15,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="0dp">
 
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login" />
+
         <EditText
             android:id="@+id/Result"
             android:layout_width="match_parent"

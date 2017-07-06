@@ -1,5 +1,6 @@
 package ru.omgtu.calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -11,13 +12,16 @@ public class calc extends AppCompatActivity {
     Button buttonDiv, buttonMul, buttonMinus, buttonPlus, buttonClean,
             buttonEqually, buttonDot, buttonOpenP, buttonCloseP, buttonSqrt, buttonZero,
             buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven,
-            buttonEight, buttonNine;
+            buttonEight, buttonNine, buttonLogin;
     TextView tvResult;
+    Intent intentLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
+        intentLogin = new Intent (calc.this, MainActivity.class);
+        buttonLogin = (Button) findViewById(R.id.Login);
         buttonDiv = (Button) findViewById(R.id.Div);
         buttonMul = (Button) findViewById(R.id.Mul);
         buttonMinus = (Button) findViewById(R.id.Minus);
@@ -43,6 +47,12 @@ public class calc extends AppCompatActivity {
     }
 
     void setComponentListeners() {
+        View.OnClickListener oclButtonLogin = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             startActivity(intentLogin);
+            }
+        };
         View.OnClickListener oclButtonZero = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -171,6 +181,7 @@ public class calc extends AppCompatActivity {
             }
         };
 
+        buttonLogin.setOnClickListener(oclButtonLogin);
         buttonZero.setOnClickListener(oclButtonZero);
         buttonOne.setOnClickListener(oclButtonOne);
         buttonTwo.setOnClickListener(oclButtonTwo);
